@@ -30,13 +30,14 @@ namespace webPGUI
         private void button2_Click(object sender, EventArgs e)
         {
             // ========================= RUN COMMAND ===============================
+            Cursor.Current = Cursors.WaitCursor;
+
+            SaveSettings();
 
             frmOutput frm = new frmOutput();
             frm.ShowDialog();
-            SaveSettings();
         }
 
-        
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -61,7 +62,7 @@ namespace webPGUI
             Globals.args = "cwebp.exe"; //  cwebp [-preset <...>] [options] in_file [-o out_file]
 
             if (cboPreset.SelectedIndex>0) // preset setting, one of: default, photo, picture, drawing, icon, text
-                Globals.args += "-preset "+ cboPreset.Text; // -preset must come first, as it overwrites other parameters
+                Globals.args += " -preset "+ cboPreset.Text; // -preset must come first, as it overwrites other parameters
 
             Globals.args += " -q " + trackBar_quality.Value.ToString(); // -q <float> quality factor (0:small..100:big)
             Globals.args += " -alpha_q " + trackBar_alpha_q.Value.ToString(); // -alpha_q <int> transparency-compression quality (0..100)
@@ -363,9 +364,9 @@ namespace webPGUI
             {
                 case 0: radioLossy.Checked = true; // lossy
                     break;
-                case 1: radioLossy.Checked = true; // lossless
+                case 1: radioLossless.Checked = true; // lossless
                     break;
-                case 2: radioLossless.Checked = true; // lossy size
+                case 2: radioLossySize.Checked = true; // lossy size
                     break;
             }
             
@@ -438,7 +439,7 @@ namespace webPGUI
                 webPGUI.Properties.Settings.Default.lossless = 0;
             else if (radioLossless.Checked)
                 webPGUI.Properties.Settings.Default.lossless = 1;
-            else
+            else if (radioLossySize.Checked)
                 webPGUI.Properties.Settings.Default.lossless = 2;
 
             webPGUI.Properties.Settings.Default.z = trackBar_z.Value;
@@ -835,7 +836,7 @@ namespace webPGUI
 
         private void button15_Click(object sender, EventArgs e)
         {
-            // SaveSettings();
+            SaveSettings();
 
             AboutBox frm2 = new AboutBox();
             frm2.ShowDialog();

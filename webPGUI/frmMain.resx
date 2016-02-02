@@ -403,10 +403,11 @@ methods 3 and up, unless -low_memory (reduce memory usage) is used.</value>
   </data>
   <data name="label29.Text" xml:space="preserve">
     <value>The main options you might want to try in order to further tune the visual quality are:
-  * 'preset' will set up a default encoding configuration targeting a particular type of input. It should appear first in the list of options, so that subsequent options can take effect on top of this preset. Default value is 'default'.
+  * 'preset' will set up a default encoding configuration targeting a particular type of input. It should appear first in the list of options, so that subsequent options can take effect on top of this preset.
   * 'spatial noise shaping' will progressively turn on (when going from 0 to 100) some additional visual optimizations (like: segmentation map re-enforcement). This option will balance the bit allocation differently. It tries to take bits from the "easy" parts of the picture and use them in the "difficult" ones instead. Usually, raising the sns value (at fixed quality value) leads to larger files, but with better quality. Typical value is around '75'.
   * 'filter strength' option directly links to the filtering strength used by the codec's in-loop processing. The higher the value, the smoother the highly-compressed area will look. This is particularly useful when aiming at very small files. Typical values are around 20-30. Note that using the option 'strong filter' will change the type of filtering.
-  * 'compression method' controls the trade-off between encoding speed and quality. Default is 4. You can try the value 5 or 6 to explore more (time-consuming) encoding possibilities. A lower value will result in faster encoding at the expense of quality.</value>
+  * 'compression method' controls the trade-off between encoding speed and quality. Default is 4. You can try the value 5 or 6 to explore more (time-consuming) encoding possibilities. A lower value will result in faster encoding at the expense of quality.
+Source: Google</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>42</value>

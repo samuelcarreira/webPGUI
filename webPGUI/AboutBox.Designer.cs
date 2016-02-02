@@ -46,7 +46,7 @@
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.ReadOnly = true;
             this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDescription.Size = new System.Drawing.Size(431, 265);
+            this.textBoxDescription.Size = new System.Drawing.Size(466, 265);
             this.textBoxDescription.TabIndex = 24;
             this.textBoxDescription.TabStop = false;
             this.textBoxDescription.Text = resources.GetString("textBoxDescription.Text");
@@ -61,7 +61,7 @@
             this.label_header.Margin = new System.Windows.Forms.Padding(0);
             this.label_header.Name = "label_header";
             this.label_header.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label_header.Size = new System.Drawing.Size(431, 134);
+            this.label_header.Size = new System.Drawing.Size(466, 134);
             this.label_header.TabIndex = 51;
             // 
             // lblversion
@@ -70,7 +70,7 @@
             this.lblversion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
             this.lblversion.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblversion.ForeColor = System.Drawing.Color.White;
-            this.lblversion.Location = new System.Drawing.Point(309, 72);
+            this.lblversion.Location = new System.Drawing.Point(342, 74);
             this.lblversion.Name = "lblversion";
             this.lblversion.Size = new System.Drawing.Size(112, 21);
             this.lblversion.TabIndex = 52;
@@ -83,7 +83,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(311, 102);
+            this.label1.Location = new System.Drawing.Point(344, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 13);
             this.label1.TabIndex = 54;
@@ -95,7 +95,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(431, 399);
+            this.ClientSize = new System.Drawing.Size(466, 399);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblversion);
             this.Controls.Add(this.label_header);

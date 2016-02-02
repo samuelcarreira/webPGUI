@@ -569,7 +569,7 @@
             "none",
             "fast",
             "best"});
-            this.cbo_alpha_filter.Location = new System.Drawing.Point(40, 255);
+            this.cbo_alpha_filter.Location = new System.Drawing.Point(40, 256);
             this.cbo_alpha_filter.Name = "cbo_alpha_filter";
             this.cbo_alpha_filter.Size = new System.Drawing.Size(212, 21);
             this.cbo_alpha_filter.TabIndex = 37;
@@ -581,7 +581,7 @@
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label30.Location = new System.Drawing.Point(38, 234);
+            this.label30.Location = new System.Drawing.Point(38, 235);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(185, 15);
             this.label30.TabIndex = 36;
@@ -622,7 +622,7 @@
             this.btn_color.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_color.BackgroundImage")));
             this.btn_color.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_color.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_color.Location = new System.Drawing.Point(215, 192);
+            this.btn_color.Location = new System.Drawing.Point(215, 193);
             this.btn_color.Name = "btn_color";
             this.btn_color.Size = new System.Drawing.Size(45, 27);
             this.btn_color.TabIndex = 40;
@@ -634,7 +634,7 @@
             // 
             this.label_color.BackColor = System.Drawing.Color.Black;
             this.label_color.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_color.Location = new System.Drawing.Point(146, 192);
+            this.label_color.Location = new System.Drawing.Point(146, 193);
             this.label_color.Name = "label_color";
             this.label_color.Size = new System.Drawing.Size(63, 27);
             this.label_color.TabIndex = 41;
@@ -780,7 +780,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label15.Location = new System.Drawing.Point(38, 198);
+            this.label15.Location = new System.Drawing.Point(38, 199);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(102, 15);
             this.label15.TabIndex = 6;
@@ -1006,7 +1006,7 @@
             this.numericUpDown_f.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_f.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown_f.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.numericUpDown_f.Location = new System.Drawing.Point(466, 249);
+            this.numericUpDown_f.Location = new System.Drawing.Point(466, 251);
             this.numericUpDown_f.Name = "numericUpDown_f";
             this.numericUpDown_f.Size = new System.Drawing.Size(45, 25);
             this.numericUpDown_f.TabIndex = 63;
@@ -1024,7 +1024,7 @@
             // 
             this.trackBar_f.BackColor = System.Drawing.Color.White;
             this.trackBar_f.LargeChange = 10;
-            this.trackBar_f.Location = new System.Drawing.Point(283, 249);
+            this.trackBar_f.Location = new System.Drawing.Point(283, 251);
             this.trackBar_f.Maximum = 100;
             this.trackBar_f.Name = "trackBar_f";
             this.trackBar_f.Size = new System.Drawing.Size(177, 45);
@@ -1082,7 +1082,7 @@
             this.numericUpDown_sns.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_sns.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown_sns.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.numericUpDown_sns.Location = new System.Drawing.Point(218, 232);
+            this.numericUpDown_sns.Location = new System.Drawing.Point(218, 235);
             this.numericUpDown_sns.Name = "numericUpDown_sns";
             this.numericUpDown_sns.Size = new System.Drawing.Size(45, 25);
             this.numericUpDown_sns.TabIndex = 76;
@@ -1100,7 +1100,7 @@
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label35.Location = new System.Drawing.Point(36, 212);
+            this.label35.Location = new System.Drawing.Point(36, 215);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(119, 15);
             this.label35.TabIndex = 67;
@@ -1112,7 +1112,7 @@
             this.numericUpDown_pass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_pass.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown_pass.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.numericUpDown_pass.Location = new System.Drawing.Point(462, 232);
+            this.numericUpDown_pass.Location = new System.Drawing.Point(462, 235);
             this.numericUpDown_pass.Maximum = new decimal(new int[] {
             10,
             0,
@@ -1140,7 +1140,7 @@
             // 
             this.trackBar_sns.BackColor = System.Drawing.Color.White;
             this.trackBar_sns.LargeChange = 1;
-            this.trackBar_sns.Location = new System.Drawing.Point(39, 232);
+            this.trackBar_sns.Location = new System.Drawing.Point(39, 235);
             this.trackBar_sns.Maximum = 100;
             this.trackBar_sns.Name = "trackBar_sns";
             this.trackBar_sns.Size = new System.Drawing.Size(177, 45);
@@ -1186,7 +1186,7 @@
             // 
             this.trackBar_pass.BackColor = System.Drawing.Color.White;
             this.trackBar_pass.LargeChange = 1;
-            this.trackBar_pass.Location = new System.Drawing.Point(283, 232);
+            this.trackBar_pass.Location = new System.Drawing.Point(283, 235);
             this.trackBar_pass.Minimum = 1;
             this.trackBar_pass.Name = "trackBar_pass";
             this.trackBar_pass.Size = new System.Drawing.Size(177, 45);
@@ -1244,7 +1244,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(280, 212);
+            this.label13.Location = new System.Drawing.Point(280, 215);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(121, 15);
             this.label13.TabIndex = 73;
@@ -1831,7 +1831,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(32, 228);
+            this.label11.Location = new System.Drawing.Point(32, 230);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(121, 15);
             this.label11.TabIndex = 66;
@@ -1853,7 +1853,7 @@
             this.numericUpDown_m.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDown_m.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown_m.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.numericUpDown_m.Location = new System.Drawing.Point(218, 249);
+            this.numericUpDown_m.Location = new System.Drawing.Point(218, 251);
             this.numericUpDown_m.Maximum = new decimal(new int[] {
             6,
             0,
@@ -1875,7 +1875,7 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label32.Location = new System.Drawing.Point(170, 271);
+            this.label32.Location = new System.Drawing.Point(170, 273);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(39, 13);
             this.label32.TabIndex = 68;
@@ -1885,7 +1885,7 @@
             // 
             this.trackBar_m.BackColor = System.Drawing.Color.White;
             this.trackBar_m.LargeChange = 1;
-            this.trackBar_m.Location = new System.Drawing.Point(35, 249);
+            this.trackBar_m.Location = new System.Drawing.Point(35, 251);
             this.trackBar_m.Maximum = 6;
             this.trackBar_m.Name = "trackBar_m";
             this.trackBar_m.Size = new System.Drawing.Size(177, 45);
@@ -1899,7 +1899,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(291, 208);
+            this.label12.Location = new System.Drawing.Point(290, 208);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(45, 13);
             this.label12.TabIndex = 55;
@@ -1932,7 +1932,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label21.Location = new System.Drawing.Point(287, 228);
+            this.label21.Location = new System.Drawing.Point(287, 230);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(142, 15);
             this.label21.TabIndex = 61;
@@ -1943,7 +1943,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label22.Location = new System.Drawing.Point(287, 270);
+            this.label22.Location = new System.Drawing.Point(287, 275);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(56, 13);
             this.label22.TabIndex = 58;
@@ -1954,7 +1954,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label23.Location = new System.Drawing.Point(370, 271);
+            this.label23.Location = new System.Drawing.Point(371, 275);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(86, 13);
             this.label23.TabIndex = 59;
@@ -2004,7 +2004,6 @@
             this.tabPage12.Controls.Add(this.label41);
             this.tabPage12.Controls.Add(this.label13);
             this.tabPage12.Controls.Add(this.numericUpDown_near_lossless);
-            this.tabPage12.Controls.Add(this.trackBar_pass);
             this.tabPage12.Controls.Add(this.checkBox_strong);
             this.tabPage12.Controls.Add(this.numericUpDown_partition_limit);
             this.tabPage12.Controls.Add(this.cboHint);
@@ -2016,6 +2015,7 @@
             this.tabPage12.Controls.Add(this.numericUpDown_psnr);
             this.tabPage12.Controls.Add(this.checkBox_psnr);
             this.tabPage12.Controls.Add(this.trackBar_partition_limit);
+            this.tabPage12.Controls.Add(this.trackBar_pass);
             this.tabPage12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage12.Location = new System.Drawing.Point(4, 26);
             this.tabPage12.Margin = new System.Windows.Forms.Padding(0);
@@ -2030,7 +2030,7 @@
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label36.Location = new System.Drawing.Point(44, 257);
+            this.label36.Location = new System.Drawing.Point(44, 260);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(19, 13);
             this.label36.TabIndex = 68;
@@ -2041,7 +2041,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(182, 257);
+            this.label8.Location = new System.Drawing.Point(182, 260);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(26, 13);
             this.label8.TabIndex = 69;
@@ -2052,11 +2052,11 @@
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label37.Location = new System.Drawing.Point(402, 255);
+            this.label37.Location = new System.Drawing.Point(426, 260);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(52, 13);
+            this.label37.Size = new System.Drawing.Size(26, 13);
             this.label37.TabIndex = 70;
-            this.label37.Text = "maximum";
+            this.label37.Text = "max";
             // 
             // label43
             // 
@@ -2173,7 +2173,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(48, 63);
+            this.label1.Location = new System.Drawing.Point(43, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(22, 13);
             this.label1.TabIndex = 46;
@@ -2183,7 +2183,7 @@
             // 
             this.checkBox_noasm.AutoSize = true;
             this.checkBox_noasm.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_noasm.Location = new System.Drawing.Point(38, 149);
+            this.checkBox_noasm.Location = new System.Drawing.Point(38, 151);
             this.checkBox_noasm.Name = "checkBox_noasm";
             this.checkBox_noasm.Size = new System.Drawing.Size(208, 19);
             this.checkBox_noasm.TabIndex = 56;
@@ -2195,7 +2195,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label19.Location = new System.Drawing.Point(167, 63);
+            this.label19.Location = new System.Drawing.Point(169, 63);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(39, 13);
             this.label19.TabIndex = 47;
@@ -2206,7 +2206,7 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label33.Location = new System.Drawing.Point(297, 63);
+            this.label33.Location = new System.Drawing.Point(292, 63);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(22, 13);
             this.label33.TabIndex = 50;
@@ -2316,6 +2316,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WebP encoding tool GUI";
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_quality)).EndInit();

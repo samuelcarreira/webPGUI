@@ -118,11 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBoxDescription.Text" xml:space="preserve">
-    <value>WebM Encoding GUI tool is a simple application created with the objective of assisting in the conversion of images to the WebP format (this format created by Google, allows a much higher compression then JPEG format).
-Because the tool provided by Google is hard to use (command-line only with numerous tuning options via parameters), I decided to create this interface in c# for personal use.
+    <value>WebP encoding tool GUI is a simple Windows application created with the objective of assisting in the conversion of images to the WebP format (this format created by Google, allows a much higher compression then JPEG format). Because the tool provided by Google is hard to use (command-line only with numerous tuning options via parameters ), I decided to create this interface personal use.
 
-NOTE: This application is at a early stage of development and still contains many errors/many features are not yet available. If there is a large public interest, I can improve the application. Use the application at your risk and be friendly with your criticism.
-
+NOTE: This application is at an early stage of development and still contains many errors/many features are not yet available. If there is a large public interest, I can improve the application. This is my first C# application so use the application at your risk and be friendly with your criticism.
 
 The MIT License (MIT)
 
