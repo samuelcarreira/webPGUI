@@ -27,6 +27,8 @@ Because the tool provided by Google is hard to use (command-line only with numer
 3. Check the options (position the mouse pointer hover the options to check the tooltips included and learn more about the parameters)
 3. Click ENCODE and see the output results
 
+##### How to view webP images?
+Google Chrome can open WebP files natively. Or install Windows CODEC https://developers.google.com/speed/webp/docs/webp_codec if you want to view WebP files in Windows Photo Viewer and their thumbnails in Windows Explorer
 
 ## Why Should I Use this App?
 You can use one of many encoder tools and plugins available, but none of them have the same options of the official encoder tool provided by Google. Also, some plugins (like the Photoshop Plugin) are outdated and don’t produce the better output. If you want to encode your images with total control, you can use this app to easily access to the documentation and change all the little options to produce the better output.
@@ -39,7 +41,7 @@ There is a lot to work to be done in the application, so if you are interested c
 - Check valid options
 - Integrate webP library
 - Resize/Crop
-- A 
+- A lot of ‘dumb/simple code’ (this is a very simple application) so don’t use this as reference
 
 ## History
 2016-02-02 - First public version
