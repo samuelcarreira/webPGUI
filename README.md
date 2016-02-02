@@ -13,7 +13,7 @@ Because the tool provided by Google is hard to use (command-line only with numer
 
 ...or Compile the source code with Visual Studio 2015 and run the utility.
 
-#### System Requirements
+##### System Requirements
 * 1 GHz CPU
 * 512 MB RAM 
 * Windows® XP SP3 or above (32 or 64 bits) (tested on Windows® 10) 
@@ -27,6 +27,10 @@ Because the tool provided by Google is hard to use (command-line only with numer
 3. Check the options (position the mouse pointer hover the options to check the tooltips included and learn more about the parameters)
 3. Click ENCODE and see the output results
 
+
+## Why Should I Use this App?
+You can use one of many encoder tools and plugins available, but none of them have the same options of the official encoder tool provided by Google. Also, some plugins (like the Photoshop Plugin) are outdated and don’t produce the better output. If you want to encode your images with total control, you can use this app to easily access to the documentation and change all the little options to produce the better output.
+
 ## Contributing
 There is a lot to work to be done in the application, so if you are interested contact me. I will only continue the development of this application if there was a notorious interest on that. 
 
@@ -35,7 +39,7 @@ There is a lot to work to be done in the application, so if you are interested c
 - Check valid options
 - Integrate webP library
 - Resize/Crop
-- Some options
+- A 
 
 ## History
 2016-02-02 - First public version
@@ -44,7 +48,7 @@ There is a lot to work to be done in the application, so if you are interested c
 - Developed by: Samuel Carreira
 - Includes ConsoleAppLauncher Library released under The MIT License (MIT). Copyright (c) 2013 Slava Guzenko 
 - Includes cwebp.exe encoding tool v.0.5.0 - Copyright (c) 2010, Google Inc
+- A lot of ‘dumb/simple code’ (this is a very simple application) so don’t use this as reference
 
 ## License
 MIT License
-
