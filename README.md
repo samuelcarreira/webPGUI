@@ -50,7 +50,6 @@ There is a lot to work to be done in the application, so if you are interested c
 - Developed by: Samuel Carreira
 - Includes ConsoleAppLauncher Library released under The MIT License (MIT). Copyright (c) 2013 Slava Guzenko 
 - Includes cwebp.exe encoding tool v.0.5.0 - Copyright (c) 2010, Google Inc
-- A lot of ‘dumb/simple code’ (this is a very simple application) so don’t use this as reference
 
 ## License
 MIT License
