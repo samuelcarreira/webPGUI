@@ -1,7 +1,7 @@
 # webPGUI
 ##### WebP encoding tool GUI
 
-![screenshot](https://dl.dropboxusercontent.com/u/18494731/webp_screenshot.PNG)
+![screenshot](https://dl.dropboxusercontent.com/u/18494731/webp_screenshot2.PNG)
 
 WebP encoding tool GUI is a simple Windows application created with the objective of assisting in the conversion of images to the [WebP format] (https://developers.google.com/speed/webp/) (this format created by Google, allows a much higher compression then JPEG format).
 Because the tool provided by Google is hard to use (command-line only with numerous tuning options via [parameters] (https://developers.google.com/speed/webp/docs/cwebp) ), I decided to create this interface personal use.
@@ -9,7 +9,7 @@ Because the tool provided by Google is hard to use (command-line only with numer
 **NOTE:** This application is at an early stage of development and still contains **many errors/many features are not yet available**. If there is a large public interest, I can improve the application. This is my first C# application so use the application at your risk and **be friendly with your criticism** :+1:
 
 ## Installation
-##### Download the installer from: https://dl.dropboxusercontent.com/u/18494731/webpgui-setup-0.1.0.exe (0.8 MB)
+##### Download the installer from: https://dl.orangedox.com/WjflVVa5jK3MT0SwuX (0.8 MB)
 
 ...or Compile the source code with Visual Studio 2015 and run the utility.
 
@@ -30,6 +30,12 @@ Because the tool provided by Google is hard to use (command-line only with numer
 ## Contributing
 There is a lot to work to be done in the application, so if you are interested contact me. I will only continue the development of this application if there was a notorious interest on that. 
 
+## Know bugs/Not implemented yet
+- Maybe some bugs on save/read settings
+- Check valid options
+- Integrate webP library
+- Resize/Crop
+- Some options
 
 ## History
 2016-02-02 - First public version
