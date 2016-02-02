@@ -1,3 +1,11 @@
+/Images
+/webPGUI/setup
+/webPGUI/bin
+/webPGUI/obj
+/.vs
+
+about.txt
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
