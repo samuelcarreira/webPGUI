@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using SlavaGu.ConsoleAppLauncher;
 
+
 namespace webPGUI
 {
     public partial class frmOutput : Form
@@ -17,6 +18,7 @@ namespace webPGUI
             InitializeComponent();
         }
 
+
         private void frmOutput_Load(object sender, EventArgs e)
         {
             textBox2.Text = "# " + DateTime.Now.ToString() + " - Start encoding... \r\n" + "\r\n";
@@ -24,6 +26,7 @@ namespace webPGUI
 
             startencoding();
         }
+
 
         private void startencoding()
         {
