@@ -46,6 +46,7 @@ There is a lot to work to be done in the application, so if you are interested c
 
 ## History
 2016-02-08 - Drag and Drop Support
+
 2016-02-02 - First public version
 
 ## Credits
