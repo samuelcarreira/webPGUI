@@ -249,7 +249,8 @@
             this.button_inputfile.Size = new System.Drawing.Size(51, 34);
             this.button_inputfile.TabIndex = 4;
             this.button_inputfile.Text = "...";
-            this.toolTip1.SetToolTip(this.button_inputfile, "Choose a PNG, JPEG, TIFF or WebP image file");
+            this.toolTip1.SetToolTip(this.button_inputfile, "Choose a PNG, JPEG, TIFF or WebP image file\r\nor Drag and Drop your file to this w" +
+        "indow");
             this.button_inputfile.UseVisualStyleBackColor = true;
             this.button_inputfile.Click += new System.EventHandler(this.button3_Click);
             // 

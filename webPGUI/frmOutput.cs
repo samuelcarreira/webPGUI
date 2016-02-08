@@ -16,6 +16,7 @@ namespace webPGUI
         public frmOutput()
         {
             InitializeComponent();
+
         }
 
 

@@ -17,8 +17,42 @@ namespace webPGUI
         public frmMain()
         {
             InitializeComponent();
+            this.AllowDrop = true;
+            this.DragEnter += new DragEventHandler(frmMain_DragEnter);
+            this.DragDrop += new DragEventHandler(frmMain_DragDrop);
+            tabControl1.SelectedIndexChanged += new EventHandler(TabControl1_SelectedIndexChanged);
         }
 
+        void frmMain_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+        }
+
+        void frmMain_DragDrop(object sender, DragEventArgs e)
+        {
+
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            string extension = Path.GetExtension(files[0]);
+            //Console.WriteLine(extension);
+
+            if (extension == ".jpg" || extension == ".jpeg" || extension == ".tif" || extension == ".png" || extension == ".gif" || extension == ".webp")
+            {
+                openFileDialog1.FileName = files[0];
+                textBox_input.Text = files[0];
+                processArgs();
+            }
+
+            //foreach (string file in files) Console.WriteLine(file);
+        }
+
+        private void TabControl1_SelectedIndexChanged(Object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 0)
+                this.AllowDrop = true;
+            else
+                this.AllowDrop = false;
+        }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
