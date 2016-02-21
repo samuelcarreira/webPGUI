@@ -192,7 +192,8 @@ namespace webPGUI
             if (radioLossless.Checked)
                 Globals.args += " -lossless";// encode image losslessly
 
-            Globals.args += " -near_lossless " + trackBar_near_lossless.Value.ToString(); // use near-lossless image preprocessing(0..100 = off)
+            if (trackBar_near_lossless.Value < 100)
+                Globals.args += " -near_lossless " + trackBar_near_lossless.Value.ToString(); // use near-lossless image preprocessing(0..100 = off)
 
             if (cboHint.SelectedIndex>0)
                 Globals.args += " -hint " + cboHint.SelectedItem.ToString(); // specify image characteristics hint, one of: photo, picture or graph
@@ -393,6 +394,7 @@ namespace webPGUI
             trackBar_quality.Value = webPGUI.Properties.Settings.Default.q;
             cboPreset.SelectedIndex = webPGUI.Properties.Settings.Default.preset;
             trackBar_alpha_q.Value = webPGUI.Properties.Settings.Default.alpha_q;
+            numericUpDown_q.Value = webPGUI.Properties.Settings.Default.alpha_q;
 
             switch (webPGUI.Properties.Settings.Default.lossless)
             {
