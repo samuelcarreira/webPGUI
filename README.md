@@ -9,8 +9,8 @@ Because the tool provided by Google is hard to use (command-line only with numer
 **NOTE:** This application is at an early stage of development and still contains **many errors/many features are not yet available**. If there is a large public interest, I can improve the application. This is my first C# application so use the application at your risk and **be friendly with your criticism** :+1:
 
 ## Installation
-##### Download the installer from: https://dl.orangedox.com/WjflVVa5jK3MT0SwuX (0.8 MB)
-(Google Chrome flags this installer because it isn't signed, so you can safelly ignore the warning)
+##### Download the installer from: https://dl.orangedox.com/5YMZB2Zy7il6MyEXmu (0.8 MB)
+(Google Chrome flags this installer as malicious because it isn't signed, but you can safelly ignore the warning)
 
 ...or Compile the source code with Visual Studio 2015 and run the utility.
 
