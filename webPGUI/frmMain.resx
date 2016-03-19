@@ -409,6 +409,9 @@ methods 3 and up, unless -low_memory (reduce memory usage) is used.</value>
   * 'compression method' controls the trade-off between encoding speed and quality. Default is 4. You can try the value 5 or 6 to explore more (time-consuming) encoding possibilities. A lower value will result in faster encoding at the expense of quality.
 Source: Google</value>
   </data>
+  <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>511, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>42</value>
   </metadata>

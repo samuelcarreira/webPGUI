@@ -16,25 +16,11 @@ namespace webPGUI
         public frmOutput()
         {
             InitializeComponent();
-
         }
-
 
         private void frmOutput_Load(object sender, EventArgs e)
         {
-            textBox2.Text = "# " + DateTime.Now.ToString() + " - Start encoding... \r\n" + "\r\n";
-            textBox2.Update();
-
-            startencoding();
-        }
-
-
-        private void startencoding()
-        {
-            string outputconsole = ConsoleApp.Run("cwebp.exe", Globals.args).Output.Trim();
-            textBox2.Text += outputconsole;
-
-            Cursor.Current = Cursors.Default;
+            textBox2.Text = Globals.consolelog;
         }
     }
 }

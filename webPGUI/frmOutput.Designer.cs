@@ -63,7 +63,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Output window";
+            this.Text = "Output log";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmOutput_Load);
             this.ResumeLayout(false);

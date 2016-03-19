@@ -21,6 +21,7 @@ namespace webPGUI
             this.DragEnter += new DragEventHandler(frmMain_DragEnter);
             this.DragDrop += new DragEventHandler(frmMain_DragDrop);
             tabControl1.SelectedIndexChanged += new EventHandler(TabControl1_SelectedIndexChanged);
+
         }
 
         void frmMain_DragEnter(object sender, DragEventArgs e)
@@ -32,18 +33,28 @@ namespace webPGUI
         {
 
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            string extension;
 
-            string extension = Path.GetExtension(files[0]);
-            //Console.WriteLine(extension);
-
-            if (extension == ".jpg" || extension == ".jpeg" || extension == ".tif" || extension == ".png" || extension == ".gif" || extension == ".webp")
+            foreach (string file in files)
             {
-                openFileDialog1.FileName = files[0];
-                textBox_input.Text = files[0];
-                processArgs();
-            }
+                extension = Path.GetExtension(file);
+                //Console.WriteLine(extension);
 
-            //foreach (string file in files) Console.WriteLine(file);
+                if (extension == ".jpg" || extension == ".jpeg" || extension == ".tif" || extension == ".png" || extension == ".gif" || extension == ".webp")
+                {
+                    openFileDialog1.FileName = file;
+                    if (radioButton_single.Checked) {
+                        textBox_input.Text = file;
+                        textBox_outputfile.Text = Path.GetDirectoryName(openFileDialog1.FileName) + "\\" +
+                        Path.GetFileNameWithoutExtension(openFileDialog1.FileName) + ".webp";
+                    } else
+                    {
+                        listBox_batch.Items.Add(file);
+                    }
+                    
+                    processArgs();
+                }
+            }
         }
 
         private void TabControl1_SelectedIndexChanged(Object sender, EventArgs e)
@@ -66,7 +77,41 @@ namespace webPGUI
             // ========================= RUN COMMAND ===============================
             Cursor.Current = Cursors.WaitCursor;
 
+            frmMain.ActiveForm.Text = "Encoding... Please wait...";
+            frmMain.ActiveForm.Refresh();
+
             SaveSettings();
+
+            Globals.consolelog = "# " + DateTime.Now.ToString() + " - Start encoding... \r\n" + "\r\n";
+
+            if (radioButton_single.Checked)
+            {
+                Globals.consolelog += ConsoleApp.Run("cwebp.exe", Globals.args).Output.Trim();
+            }
+            else
+            {   // batch mode
+                string finalargs;
+                int count = listBox_batch.Items.Count;
+                int current = 1;
+
+                foreach (string file in listBox_batch.Items)
+                {
+                    finalargs = Globals.args + " \"" + file + "\" -o \"" + textBox_outputfile.Text + "\\" + Path.GetFileNameWithoutExtension(file) + ".webp\" ";
+
+                    Globals.consolelog += "File " + current + " of " + count + "\r\n";
+                    Globals.consolelog += ConsoleApp.Run("cwebp.exe", finalargs).Output.Trim();
+                    Globals.consolelog += "\r\n############################################# \r\n\r\n";
+
+                    frmMain.ActiveForm.Text = "Encoding... " + current + " of " + count + " Please wait...";
+                    frmMain.ActiveForm.Refresh();
+                    current++;
+                }
+            }
+
+            Cursor.Current = Cursors.Default;
+
+            frmMain.ActiveForm.Text = "WebP encoding tool GUI";
+            frmMain.ActiveForm.Refresh();
 
             frmOutput frm = new frmOutput();
             frm.ShowDialog();
@@ -75,8 +120,8 @@ namespace webPGUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            openFileDialog1.Filter = "Image files (*.jpg, *.jpeg, *.tif, *.gif, *.png, *.webp) | *.jpg; *.jpeg; *.tif; *.gif; *.png; *.webp|JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|TIFF Files (*.tif)|*.tif|WebP Files (*.webp)|*.webp";
+            openFileDialog1.Multiselect = false;
+            openFileDialog1.Filter = "Image files (*.jpg, *.jpeg, *.tif, *.gif, *.png, *.webp) | *.jpg; *.jpeg; *.tif; *.gif; *.png; *.webp | JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|TIFF Files (*.tif)|*.tif|WebP Files (*.webp)|*.webp";
             openFileDialog1.FilterIndex = 1;
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -95,7 +140,7 @@ namespace webPGUI
         {
             Globals.args = "cwebp.exe"; //  cwebp [-preset <...>] [options] in_file [-o out_file]
 
-            if (cboPreset.SelectedIndex>0) // preset setting, one of: default, photo, picture, drawing, icon, text
+            if (cboPreset.SelectedIndex > 0) // preset setting, one of: default, photo, picture, drawing, icon, text
                 Globals.args += " -preset "+ cboPreset.Text; // -preset must come first, as it overwrites other parameters
 
             Globals.args += " -q " + trackBar_quality.Value.ToString(); // -q <float> quality factor (0:small..100:big)
@@ -137,8 +182,10 @@ namespace webPGUI
             // Globals.args += " -partition_limit " + trackBar10.Value.ToString(); // limit quality to fit the 512k limit on the first partition(0 = no degradation... 100 = full)
             Globals.args += " -pass " + trackBar_pass.Value.ToString(); // analysis pass number (1..10)
 
-            /* TODO -crop <x> <y> <w> <h> .. crop picture with the given rectangle
-                    -resize <w> <h> ........ resize picture (after any cropping) */
+            /* TODO -crop <x> <y> <w> <h> .. crop picture with the given rectangle     */
+
+            if (checkBox_resize.Checked)
+                Globals.args += " -resize " + numericUpDown_resizeX.Value.ToString() + " " + numericUpDown_resizeY.Value.ToString(); // -resize < w > < h > ........resize picture(after any cropping)
 
             if (checkBox_mt.Checked)
                 Globals.args += " -mt"; // use multi-threading if available
@@ -229,18 +276,34 @@ namespace webPGUI
             // -pre <int> ............. pre-processing filter Specify some pre-processing steps. Using a value of 2 will trigger quality-dependent pseudo-random dithering during RGBA->YUVA conversion (lossy compression only).
 
             // ============================== output =================================
-            if (openFileDialog1.FileName != "")
+            if (radioButton_single.Checked)
             {
-                Globals.args += " \"" + openFileDialog1.FileName + "\" ";
-                Globals.args += "-o \"" + textBox_outputfile.Text + "\" ";
-                button_encode.Enabled = true;
-            } else {
-                Globals.args += " SPECIFY A FILE NAME";
-                button_encode.Enabled = false;
+                if (openFileDialog1.FileName != "")
+                {
+                    Globals.args += " \"" + openFileDialog1.FileName + "\" "; // input
+                    Globals.args += "-o \"" + textBox_outputfile.Text + "\" ";
+                    button_encode.Enabled = true;
+                }
+                else {
+                    Globals.args += " SPECIFY A FILE NAME";
+                    button_encode.Enabled = false;
+                }
+                textBox_console.Text = Globals.args; // show commands on text box
+            } else
+            {
+                textBox_console.Text = Globals.args;
+
+                if (folderBrowserDialog1.SelectedPath != "")
+                {
+                    textBox_console.Text += " \"MULTIPLE FILES\" "; // input
+                    textBox_console.Text += "-o \"" + folderBrowserDialog1.SelectedPath + "\" ";
+                    button_encode.Enabled = true;
+                }
+                else {
+                    textBox_console.Text += " SPECIFY A OUTPUT FOLDER";
+                    button_encode.Enabled = false;
+                }
             }
-            
-            // show commands on text box
-            textBox_console.Text = Globals.args;
         }
 
         private void trackBar1_Scroll_1(object sender, EventArgs e)
@@ -274,16 +337,23 @@ namespace webPGUI
             saveFileDialog1.Filter = "webP Image (*.webp) | *.webp";
             saveFileDialog1.FilterIndex = 1;
 
-            // Process input if the user clicked OK.
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (radioButton_single.Checked)
             {
-                // Open the selected file to read.
-                textBox_outputfile.Text = saveFileDialog1.FileName;
-                processArgs();
+               if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    textBox_outputfile.Text = saveFileDialog1.FileName;
+                    processArgs();
+                }
+            } else
+            {
+                if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    textBox_outputfile.Text = folderBrowserDialog1.SelectedPath;
+                    processArgs();
+                }
             }
         }
 
- 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -983,10 +1053,89 @@ namespace webPGUI
             trackBar_pass.Value = decimal.ToInt32(numericUpDown_pass.Value);
             processArgs();
         }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button_add_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Multiselect = true;
+            openFileDialog1.Filter = "Image files (*.jpg, *.jpeg, *.tif, *.gif, *.png, *.webp) | *.jpg; *.jpeg; *.tif; *.gif; *.png; *.webp | JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|TIFF Files (*.tif)|*.tif|WebP Files (*.webp)|*.webp";
+            openFileDialog1.FilterIndex = 1;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                foreach (var f in openFileDialog1.FileNames)
+                {
+                    listBox_batch.Items.Add(f);
+
+                    //listView1.Items.Add (Path.GetFileName (f));
+                }
+
+            }
+        }
+
+        private void button_remove_Click(object sender, EventArgs e)
+        {
+            if (listBox_batch.SelectedIndex >= 0)
+            {
+                listBox_batch.Items.RemoveAt(listBox_batch.SelectedIndex);
+            }
+        }
+
+        private void radioButton_multiple_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_multiple.Checked)
+            {
+                listBox_batch.Visible = true;
+                button_add.Visible = true;
+                button_remove.Visible = true;
+                textBox_input.Visible = false;
+                button_inputfile.Visible = false;
+                label2.Text = "Select multiple images";
+                label29.Visible = false;
+                label4.Text = "Output folder";
+            } 
+        }
+
+        private void radioButton_single_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_single.Checked)
+            {
+                listBox_batch.Visible = false;
+                button_add.Visible = false;
+                button_remove.Visible = false;
+                textBox_input.Visible = true;
+                button_inputfile.Visible = true;
+                label2.Text = "Select your image";
+                label29.Visible = true;
+                label4.Text = "Output image";
+            }
+        }
     }
 
     public static class Globals
     {
         public static String args;
+        public static String consolelog;
     }
+
+    
 }

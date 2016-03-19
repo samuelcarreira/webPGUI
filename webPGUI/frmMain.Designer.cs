@@ -87,8 +87,8 @@
             this.checkBox_d = new System.Windows.Forms.CheckBox();
             this.checkBox_v = new System.Windows.Forms.CheckBox();
             this.checkBox_resize = new System.Windows.Forms.CheckBox();
-            this.numericUpDown15 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown16 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_resizeX = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_resizeY = new System.Windows.Forms.NumericUpDown();
             this.trackBar_sharpness = new System.Windows.Forms.TrackBar();
             this.numericUpDown_sharpness = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown_f = new System.Windows.Forms.NumericUpDown();
@@ -113,6 +113,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.trackBar_z = new System.Windows.Forms.TrackBar();
             this.trackBar_segments = new System.Windows.Forms.TrackBar();
+            this.button_remove = new System.Windows.Forms.Button();
+            this.button_add = new System.Windows.Forms.Button();
             this.label44 = new System.Windows.Forms.Label();
             this.checkBox_short = new System.Windows.Forms.CheckBox();
             this.checkBox_quiet = new System.Windows.Forms.CheckBox();
@@ -137,6 +139,10 @@
             this.button_4 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.label49 = new System.Windows.Forms.Label();
+            this.radioButton_multiple = new System.Windows.Forms.RadioButton();
+            this.radioButton_single = new System.Windows.Forms.RadioButton();
+            this.listBox_batch = new System.Windows.Forms.ListBox();
             this.label29 = new System.Windows.Forms.Label();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
@@ -172,6 +178,7 @@
             this.label48 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_quality)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_alpha_q)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_q)).BeginInit();
@@ -181,8 +188,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_partition_limit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_partition_limit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_map)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_resizeX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_resizeY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_sharpness)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_sharpness)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_f)).BeginInit();
@@ -220,7 +227,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 15);
+            this.label2.Location = new System.Drawing.Point(20, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(155, 25);
             this.label2.TabIndex = 1;
@@ -244,9 +251,9 @@
             // 
             // button_inputfile
             // 
-            this.button_inputfile.Location = new System.Drawing.Point(460, 44);
+            this.button_inputfile.Location = new System.Drawing.Point(444, 92);
             this.button_inputfile.Name = "button_inputfile";
-            this.button_inputfile.Size = new System.Drawing.Size(51, 34);
+            this.button_inputfile.Size = new System.Drawing.Size(67, 34);
             this.button_inputfile.TabIndex = 4;
             this.button_inputfile.Text = "...";
             this.toolTip1.SetToolTip(this.button_inputfile, "Choose a PNG, JPEG, TIFF or WebP image file\r\nor Drag and Drop your file to this w" +
@@ -272,7 +279,7 @@
             this.button_output_file.Size = new System.Drawing.Size(49, 34);
             this.button_output_file.TabIndex = 4;
             this.button_output_file.Text = "...";
-            this.toolTip1.SetToolTip(this.button_output_file, "Change output file name");
+            this.toolTip1.SetToolTip(this.button_output_file, "Change output file name/folder");
             this.button_output_file.UseVisualStyleBackColor = true;
             this.button_output_file.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -330,6 +337,10 @@
         "raph.");
             this.cboHint.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
             // textBox_console
             // 
             this.textBox_console.BackColor = System.Drawing.Color.Black;
@@ -360,10 +371,10 @@
             // textBox_input
             // 
             this.textBox_input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox_input.Location = new System.Drawing.Point(35, 49);
+            this.textBox_input.Location = new System.Drawing.Point(35, 97);
             this.textBox_input.Name = "textBox_input";
             this.textBox_input.ReadOnly = true;
-            this.textBox_input.Size = new System.Drawing.Size(419, 22);
+            this.textBox_input.Size = new System.Drawing.Size(403, 22);
             this.textBox_input.TabIndex = 18;
             // 
             // numericUpDown_q
@@ -556,7 +567,7 @@
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label28.Location = new System.Drawing.Point(253, 197);
+            this.label28.Location = new System.Drawing.Point(253, 234);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(13, 15);
             this.label28.TabIndex = 32;
@@ -906,9 +917,8 @@
             // checkBox_resize
             // 
             this.checkBox_resize.AutoSize = true;
-            this.checkBox_resize.Enabled = false;
             this.checkBox_resize.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_resize.Location = new System.Drawing.Point(36, 158);
+            this.checkBox_resize.Location = new System.Drawing.Point(36, 195);
             this.checkBox_resize.Name = "checkBox_resize";
             this.checkBox_resize.Size = new System.Drawing.Size(99, 19);
             this.checkBox_resize.TabIndex = 42;
@@ -917,57 +927,55 @@
             this.checkBox_resize.UseVisualStyleBackColor = true;
             this.checkBox_resize.CheckedChanged += new System.EventHandler(this.checkBox10_CheckedChanged);
             // 
-            // numericUpDown15
+            // numericUpDown_resizeX
             // 
-            this.numericUpDown15.Enabled = false;
-            this.numericUpDown15.Location = new System.Drawing.Point(160, 193);
-            this.numericUpDown15.Maximum = new decimal(new int[] {
+            this.numericUpDown_resizeX.Location = new System.Drawing.Point(160, 230);
+            this.numericUpDown_resizeX.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
-            this.numericUpDown15.Minimum = new decimal(new int[] {
+            this.numericUpDown_resizeX.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown15.Name = "numericUpDown15";
-            this.numericUpDown15.Size = new System.Drawing.Size(86, 22);
-            this.numericUpDown15.TabIndex = 34;
-            this.numericUpDown15.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.toolTip1.SetToolTip(this.numericUpDown15, "Width");
-            this.numericUpDown15.Value = new decimal(new int[] {
+            this.numericUpDown_resizeX.Name = "numericUpDown_resizeX";
+            this.numericUpDown_resizeX.Size = new System.Drawing.Size(86, 22);
+            this.numericUpDown_resizeX.TabIndex = 34;
+            this.numericUpDown_resizeX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.toolTip1.SetToolTip(this.numericUpDown_resizeX, "Width");
+            this.numericUpDown_resizeX.Value = new decimal(new int[] {
             1024,
             0,
             0,
             0});
-            this.numericUpDown15.ValueChanged += new System.EventHandler(this.numericUpDown5_ValueChanged);
+            this.numericUpDown_resizeX.ValueChanged += new System.EventHandler(this.numericUpDown5_ValueChanged);
             // 
-            // numericUpDown16
+            // numericUpDown_resizeY
             // 
-            this.numericUpDown16.Enabled = false;
-            this.numericUpDown16.Location = new System.Drawing.Point(273, 193);
-            this.numericUpDown16.Maximum = new decimal(new int[] {
+            this.numericUpDown_resizeY.Location = new System.Drawing.Point(272, 230);
+            this.numericUpDown_resizeY.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
-            this.numericUpDown16.Minimum = new decimal(new int[] {
+            this.numericUpDown_resizeY.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown16.Name = "numericUpDown16";
-            this.numericUpDown16.Size = new System.Drawing.Size(86, 22);
-            this.numericUpDown16.TabIndex = 34;
-            this.numericUpDown16.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.toolTip1.SetToolTip(this.numericUpDown16, "Height");
-            this.numericUpDown16.Value = new decimal(new int[] {
+            this.numericUpDown_resizeY.Name = "numericUpDown_resizeY";
+            this.numericUpDown_resizeY.Size = new System.Drawing.Size(86, 22);
+            this.numericUpDown_resizeY.TabIndex = 34;
+            this.numericUpDown_resizeY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.toolTip1.SetToolTip(this.numericUpDown_resizeY, "Height");
+            this.numericUpDown_resizeY.Value = new decimal(new int[] {
             768,
             0,
             0,
             0});
-            this.numericUpDown16.ValueChanged += new System.EventHandler(this.numericUpDown5_ValueChanged);
+            this.numericUpDown_resizeY.ValueChanged += new System.EventHandler(this.numericUpDown5_ValueChanged);
             // 
             // trackBar_sharpness
             // 
@@ -1219,7 +1227,7 @@
             this.button_love.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_love.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_love.ForeColor = System.Drawing.Color.White;
-            this.button_love.Location = new System.Drawing.Point(658, 41);
+            this.button_love.Location = new System.Drawing.Point(658, 32);
             this.button_love.Name = "button_love";
             this.button_love.Size = new System.Drawing.Size(37, 40);
             this.button_love.TabIndex = 56;
@@ -1356,6 +1364,32 @@
             this.trackBar_segments.Value = 4;
             this.trackBar_segments.Scroll += new System.EventHandler(this.trackBar_segments_Scroll);
             // 
+            // button_remove
+            // 
+            this.button_remove.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_remove.Location = new System.Drawing.Point(444, 135);
+            this.button_remove.Name = "button_remove";
+            this.button_remove.Size = new System.Drawing.Size(67, 28);
+            this.button_remove.TabIndex = 69;
+            this.button_remove.Text = "Remove";
+            this.toolTip1.SetToolTip(this.button_remove, "Remove file from list");
+            this.button_remove.UseVisualStyleBackColor = true;
+            this.button_remove.Visible = false;
+            this.button_remove.Click += new System.EventHandler(this.button_remove_Click);
+            // 
+            // button_add
+            // 
+            this.button_add.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_add.Location = new System.Drawing.Point(444, 95);
+            this.button_add.Name = "button_add";
+            this.button_add.Size = new System.Drawing.Size(67, 34);
+            this.button_add.TabIndex = 68;
+            this.button_add.Text = "Add";
+            this.toolTip1.SetToolTip(this.button_add, "Choose multiple PNG, JPEG, TIFF or WebP image files");
+            this.button_add.UseVisualStyleBackColor = true;
+            this.button_add.Visible = false;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
+            // 
             // label44
             // 
             this.label44.AutoSize = true;
@@ -1469,7 +1503,7 @@
             // numericUpDown19
             // 
             this.numericUpDown19.Enabled = false;
-            this.numericUpDown19.Location = new System.Drawing.Point(273, 76);
+            this.numericUpDown19.Location = new System.Drawing.Point(272, 76);
             this.numericUpDown19.Maximum = new decimal(new int[] {
             99999,
             0,
@@ -1566,7 +1600,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(170, 381);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(170, 385);
             this.flowLayoutPanel1.TabIndex = 54;
             // 
             // label42
@@ -1764,10 +1798,16 @@
             // tabPage10
             // 
             this.tabPage10.CausesValidation = false;
-            this.tabPage10.Controls.Add(this.label29);
+            this.tabPage10.Controls.Add(this.label49);
+            this.tabPage10.Controls.Add(this.radioButton_multiple);
+            this.tabPage10.Controls.Add(this.radioButton_single);
             this.tabPage10.Controls.Add(this.textBox_input);
+            this.tabPage10.Controls.Add(this.button_remove);
+            this.tabPage10.Controls.Add(this.button_add);
+            this.tabPage10.Controls.Add(this.listBox_batch);
             this.tabPage10.Controls.Add(this.label2);
             this.tabPage10.Controls.Add(this.button_inputfile);
+            this.tabPage10.Controls.Add(this.label29);
             this.tabPage10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage10.Location = new System.Drawing.Point(4, 26);
             this.tabPage10.Margin = new System.Windows.Forms.Padding(0);
@@ -1777,13 +1817,60 @@
             this.tabPage10.Text = "Input";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label49.Location = new System.Drawing.Point(22, 18);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(70, 15);
+            this.label49.TabIndex = 78;
+            this.label49.Text = "Input mode";
+            // 
+            // radioButton_multiple
+            // 
+            this.radioButton_multiple.AutoSize = true;
+            this.radioButton_multiple.Location = new System.Drawing.Point(206, 38);
+            this.radioButton_multiple.Name = "radioButton_multiple";
+            this.radioButton_multiple.Size = new System.Drawing.Size(161, 17);
+            this.radioButton_multiple.TabIndex = 77;
+            this.radioButton_multiple.Text = "Batch mode (multiple files)";
+            this.radioButton_multiple.UseVisualStyleBackColor = true;
+            this.radioButton_multiple.CheckedChanged += new System.EventHandler(this.radioButton_multiple_CheckedChanged);
+            // 
+            // radioButton_single
+            // 
+            this.radioButton_single.AutoSize = true;
+            this.radioButton_single.Checked = true;
+            this.radioButton_single.Location = new System.Drawing.Point(35, 38);
+            this.radioButton_single.Name = "radioButton_single";
+            this.radioButton_single.Size = new System.Drawing.Size(76, 17);
+            this.radioButton_single.TabIndex = 76;
+            this.radioButton_single.TabStop = true;
+            this.radioButton_single.Text = "Single file";
+            this.radioButton_single.UseVisualStyleBackColor = true;
+            this.radioButton_single.CheckedChanged += new System.EventHandler(this.radioButton_single_CheckedChanged);
+            // 
+            // listBox_batch
+            // 
+            this.listBox_batch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.listBox_batch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBox_batch.FormattingEnabled = true;
+            this.listBox_batch.HorizontalScrollbar = true;
+            this.listBox_batch.Location = new System.Drawing.Point(35, 95);
+            this.listBox_batch.Name = "listBox_batch";
+            this.listBox_batch.Size = new System.Drawing.Size(403, 197);
+            this.listBox_batch.TabIndex = 67;
+            this.listBox_batch.Visible = false;
+            // 
             // label29
             // 
-            this.label29.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Font = new System.Drawing.Font("Segoe UI Semilight", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label29.Location = new System.Drawing.Point(35, 82);
+            this.label29.Location = new System.Drawing.Point(33, 129);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(476, 218);
+            this.label29.Size = new System.Drawing.Size(479, 175);
             this.label29.TabIndex = 19;
             this.label29.Text = resources.GetString("label29.Text");
             // 
@@ -2115,10 +2202,10 @@
             this.tabPage16.Controls.Add(this.numericUpDown18);
             this.tabPage16.Controls.Add(this.label47);
             this.tabPage16.Controls.Add(this.numericUpDown19);
-            this.tabPage16.Controls.Add(this.numericUpDown16);
+            this.tabPage16.Controls.Add(this.numericUpDown_resizeY);
             this.tabPage16.Controls.Add(this.label28);
             this.tabPage16.Controls.Add(this.checkBox_resize);
-            this.tabPage16.Controls.Add(this.numericUpDown15);
+            this.tabPage16.Controls.Add(this.numericUpDown_resizeX);
             this.tabPage16.Controls.Add(this.numericUpDown20);
             this.tabPage16.Controls.Add(this.numericUpDown17);
             this.tabPage16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2135,11 +2222,11 @@
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label46.Location = new System.Drawing.Point(33, 267);
+            this.label46.Location = new System.Drawing.Point(33, 150);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(261, 13);
+            this.label46.Size = new System.Drawing.Size(245, 13);
             this.label46.TabIndex = 43;
-            this.label46.Text = "NOTE: NOT AVALIABLE YET (check future for versions) ";
+            this.label46.Text = "NOTE: NOT AVAILABLE YET (check future versions) ";
             // 
             // tabPage15
             // 
@@ -2306,7 +2393,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(700, 381);
+            this.ClientSize = new System.Drawing.Size(700, 385);
             this.Controls.Add(this.button_love);
             this.Controls.Add(this.label_header);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -2330,8 +2417,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_partition_limit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_partition_limit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_map)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_resizeX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_resizeY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_sharpness)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_sharpness)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_f)).EndInit();
@@ -2438,8 +2525,8 @@
         private System.Windows.Forms.CheckBox checkBox_v;
         private System.Windows.Forms.CheckBox checkBox_progress;
         private System.Windows.Forms.CheckBox checkBox_resize;
-        private System.Windows.Forms.NumericUpDown numericUpDown15;
-        private System.Windows.Forms.NumericUpDown numericUpDown16;
+        private System.Windows.Forms.NumericUpDown numericUpDown_resizeX;
+        private System.Windows.Forms.NumericUpDown numericUpDown_resizeY;
         private System.Windows.Forms.CheckBox checkBox_crop;
         private System.Windows.Forms.NumericUpDown numericUpDown17;
         private System.Windows.Forms.NumericUpDown numericUpDown18;
@@ -2453,7 +2540,6 @@
         private System.Windows.Forms.Button button_2;
         private System.Windows.Forms.Button button_3;
         private System.Windows.Forms.Button button_4;
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.TabPage tabPage11;
         private System.Windows.Forms.TabPage tabPage12;
@@ -2519,5 +2605,13 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Button button_love;
         private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Button button_remove;
+        private System.Windows.Forms.Button button_add;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.RadioButton radioButton_multiple;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        public System.Windows.Forms.RadioButton radioButton_single;
+        private System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.ListBox listBox_batch;
     }
 }
