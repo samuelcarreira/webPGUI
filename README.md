@@ -10,7 +10,7 @@ Because the tool provided by Google is hard to use (command-line only with numer
 
 ## Installation
 ##### Download the installer from: https://dl.orangedox.com/5YMZB2Zy7il6MyEXmu (0.8 MB)
-(Google Chrome flags this installer as malicious because it isn't signed, but you can safelly ignore the warning)
+(Google Chrome flags this installer as malicious because it isn't signed, but **you can safelly ignore the warning** :sunglasses: )
 
 ...or Compile the source code with Visual Studio 2015 and run the utility.
 
