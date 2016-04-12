@@ -45,6 +45,8 @@ There is a lot to work to be done in the application, so if you are interested c
 - A lot of ‘dumb/simple code’ (this is a very simple application) so don’t use this as a reference
 
 ## History
+2016-04-12 - Bug fix (crash on background encoding)
+
 2016-03-19 - Batch mode
 
 2016-02-08 - Drag and Drop Support
