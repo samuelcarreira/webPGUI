@@ -34,6 +34,15 @@ Google Chrome can open WebP files natively. Or install Windows CODEC https://dev
 ## Why Should I Use this App?
 You can use one of many encoder tools and plugins available, but none of them have the same options of the official encoder tool provided by Google. Also, some plugins (like the Photoshop Plugin) are outdated and don’t produce the better output. If you want to encode your images with total control, you can use this app to easily access to the documentation and change all the little options to produce the better output.
 
+## Screenshots
+![screenshot](https://github.com/samcpt/webPGUI/blob/master/screenshots/webp_0001_Layer-4.png)
+![screenshot](https://github.com/samcpt/webPGUI/blob/master/screenshots/webp_0002_Layer-6.png)
+![screenshot](https://github.com/samcpt/webPGUI/blob/master/screenshots/webp_0003_Layer-2.png)
+![screenshot](https://github.com/samcpt/webPGUI/blob/master/screenshots/webp_0003_Layer-5.png)
+![screenshot](https://github.com/samcpt/webPGUI/blob/master/screenshots/webp_0004_Layer-3.png)
+![screenshot](https://github.com/samcpt/webPGUI/blob/master/screenshots/webp_0006_Layer-2.png)
+
+
 ## Contributing
 There is a lot to work to be done in the application, so if you are interested contact me. I will only continue the development of this application if there was a notorious interest on that. 
 
