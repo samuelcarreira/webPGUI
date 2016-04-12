@@ -77,12 +77,14 @@ namespace webPGUI
             // ========================= RUN COMMAND ===============================
             Cursor.Current = Cursors.WaitCursor;
 
-            frmMain.ActiveForm.Text = "Encoding... Please wait...";
-            frmMain.ActiveForm.Refresh();
+            this.Text = "Encoding... Please wait...";
+            this.Refresh();
 
             SaveSettings();
 
-            Globals.consolelog = "# " + DateTime.Now.ToString() + " - Start encoding... \r\n" + "\r\n";
+            string textseparator = "===================================================================== \r\n";
+
+            Globals.consolelog = textseparator + DateTime.Now.ToString() + " - Start encoding... \r\n" + textseparator + "\r\n";
 
             if (radioButton_single.Checked)
             {
@@ -100,18 +102,18 @@ namespace webPGUI
 
                     Globals.consolelog += "File " + current + " of " + count + "\r\n";
                     Globals.consolelog += ConsoleApp.Run("cwebp.exe", finalargs).Output.Trim();
-                    Globals.consolelog += "\r\n############################################# \r\n\r\n";
+                    Globals.consolelog += "\r\n" + textseparator + "\r\n";
 
-                    frmMain.ActiveForm.Text = "Encoding... " + current + " of " + count + " Please wait...";
-                    frmMain.ActiveForm.Refresh();
+                    this.Text = "Encoding... " + current + " of " + count + " Please wait...";
+                    this.Refresh();
                     current++;
                 }
             }
 
             Cursor.Current = Cursors.Default;
 
-            frmMain.ActiveForm.Text = "WebP encoding tool GUI";
-            frmMain.ActiveForm.Refresh();
+            this.Text = "WebP encoding tool GUI";
+            this.Refresh();
 
             frmOutput frm = new frmOutput();
             frm.ShowDialog();

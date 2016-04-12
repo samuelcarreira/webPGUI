@@ -27,11 +27,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.label_header = new System.Windows.Forms.Label();
             this.lblversion = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // textBoxDescription
@@ -77,18 +79,22 @@
             this.lblversion.Text = "v.0.1.0.0 ALPHA";
             this.lblversion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
+            // linkLabel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(344, 104);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 13);
-            this.label1.TabIndex = 54;
-            this.label1.Text = "by: Samuel Carreira";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Gainsboro;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.Gainsboro;
+            this.linkLabel1.Location = new System.Drawing.Point(343, 103);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(109, 15);
+            this.linkLabel1.TabIndex = 55;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "by: Samuel Carreira";
+            this.toolTip1.SetToolTip(this.linkLabel1, "Support email");
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Gainsboro;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // AboutBox
             // 
@@ -96,7 +102,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(466, 399);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lblversion);
             this.Controls.Add(this.label_header);
             this.Controls.Add(this.textBoxDescription);
@@ -123,6 +129,7 @@
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Label label_header;
         private System.Windows.Forms.Label lblversion;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

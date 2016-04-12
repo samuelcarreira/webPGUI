@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace webPGUI
 {
@@ -19,6 +20,11 @@ namespace webPGUI
             /*this.textBoxDescription.Text += AssemblyCopyright;
             this.textBoxDescription.Text += AssemblyCompany;
             this.textBoxDescription.Text += AssemblyDescription;*/
+
+            LinkLabel.Link link = new LinkLabel.Link();
+            link.LinkData = "mailto:samuelcarreira@outlook.com?Subject=%5BWebP%20encoding%20tool%20GUI%20v" + AssemblyVersion + "%5D";
+            linkLabel1.Links.Add(link);
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
         }
 
         #region Assembly Attribute Accessors
@@ -114,6 +120,11 @@ namespace webPGUI
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(e.Link.LinkData as string);
         }
     }
 }
